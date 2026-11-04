@@ -35,7 +35,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -90,6 +89,14 @@ fun HoldButton(
         targetValue = if (isPressed) secondaryColor else primaryColor,
         animationSpec = tween(300),
         label = "ButtonColor"
+    )
+
+    val onPrimaryColor = MaterialTheme.colorScheme.onPrimary
+    val onSecondaryColor = MaterialTheme.colorScheme.onTertiary
+    val activeOnColor by animateColorAsState(
+        targetValue = if (isPressed) onSecondaryColor else onPrimaryColor,
+        animationSpec = tween(300),
+        label = "ButtonOnColor"
     )
 
     // Keep updated references so pointerInput(Unit) is NEVER restarted during touch
@@ -168,7 +175,7 @@ fun HoldButton(
                     imageVector = Icons.Rounded.TouchApp,
                     contentDescription = null,
                     modifier = Modifier.size(48.dp),
-                    tint = Color.White
+                    tint = activeOnColor
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -181,7 +188,7 @@ fun HoldButton(
                         letterSpacing = 1.2.sp
                     ),
                     textAlign = TextAlign.Center,
-                    color = Color.White
+                    color = activeOnColor
                 )
 
                 Spacer(modifier = Modifier.height(6.dp))
@@ -192,7 +199,7 @@ fun HoldButton(
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Medium
                     ),
-                    color = Color.White.copy(alpha = 0.8f)
+                    color = activeOnColor.copy(alpha = 0.8f)
                 )
             }
         }

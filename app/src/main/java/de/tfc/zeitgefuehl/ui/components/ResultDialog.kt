@@ -37,9 +37,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.tfc.zeitgefuehl.model.GameResult
-import de.tfc.zeitgefuehl.ui.theme.AccentEmerald
-import de.tfc.zeitgefuehl.ui.theme.AccentAmber
-import de.tfc.zeitgefuehl.ui.theme.AccentCoral
 import java.util.Locale
 
 @Composable
@@ -48,9 +45,9 @@ fun ResultDialog(
     onPlayAgain: () -> Unit
 ) {
     val statusColor = when {
-        result.absDiffMillis <= 150 -> AccentEmerald
-        result.absDiffMillis <= 500 -> AccentAmber
-        else -> AccentCoral
+        result.absDiffMillis <= 150 -> MaterialTheme.colorScheme.primary
+        result.absDiffMillis <= 500 -> MaterialTheme.colorScheme.tertiary
+        else -> MaterialTheme.colorScheme.error
     }
 
     AlertDialog(
@@ -94,7 +91,7 @@ fun ResultDialog(
                         Icon(
                             imageVector = if (isFilled) Icons.Rounded.Star else Icons.Rounded.StarBorder,
                             contentDescription = null,
-                            tint = if (isFilled) AccentAmber else MaterialTheme.colorScheme.outlineVariant,
+                            tint = if (isFilled) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.outlineVariant,
                             modifier = Modifier.size(22.dp)
                         )
                     }

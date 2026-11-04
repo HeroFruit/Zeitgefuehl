@@ -31,7 +31,8 @@ Wie gut ist dein inneres Zeitgefühl? Bei **Zeitgefühl** stellst du eine Zielze
      - **Genauigkeits-Score in Prozent** & **5-Sterne-Bewertung**
      - Motivierendes Feedback (z. B. *„Perfektes Zeitgefühl! 🎯“*, *„Unmenschliche Präzision! ⚡“*)
 
-5. **🌓 Dark- & Light-Mode Umschalter**
+5. **🌓 Dynamic Color (Material You) & Dark-/Light-Mode**
+   - Nutzt die **persönliche Farbpalette deines Smartphones** (aus Hintergrundbild und Systemdesign abgeleitet).
    - Ein Icon oben rechts in der Kopfzeile erlaubt den nahtlosen Wechsel zwischen dunklem und hellem Modus.
    - Orientiert sich initial an den Systemeinstellungen des Smartphones.
 

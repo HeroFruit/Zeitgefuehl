@@ -22,7 +22,10 @@ class MainActivity : ComponentActivity() {
             val systemDark = isSystemInDarkTheme()
             val isDarkTheme = uiState.isDarkTheme ?: systemDark
 
-            ZeitgefuehlTheme(darkTheme = isDarkTheme) {
+            ZeitgefuehlTheme(
+                darkTheme = isDarkTheme,
+                dynamicColor = true
+            ) {
                 GameScreen(
                     viewModel = viewModel,
                     isDarkTheme = isDarkTheme,
